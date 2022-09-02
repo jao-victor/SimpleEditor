@@ -37,79 +37,7 @@
      <number>0</number>
     </property>
     <item>
-     <widget class="QFrame" name="frame">
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>27</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>16777215</width>
-        <height>27</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color:  #013750</string>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-      <widget class="QPushButton" name="pushButton">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>86</width>
-         <height>27</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(1, 55, 80);
-color:white;
-border: solid;</string>
-       </property>
-       <property name="text">
-        <string>Arquivo</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="pushButton_2">
-       <property name="geometry">
-        <rect>
-         <x>80</x>
-         <y>0</y>
-         <width>86</width>
-         <height>27</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(1, 55, 80);
-color:white;
-border: solid;</string>
-       </property>
-       <property name="text">
-        <string>Editar</string>
-       </property>
-      </widget>
-     </widget>
-    </item>
-    <item>
-     <widget class="QTextEdit" name="textEdit">
-      <property name="font">
-       <font>
-        <pointsize>13</pointsize>
-        <italic>true</italic>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: #090f13;
-color:white;</string>
-      </property>
-     </widget>
+     <widget class="QTextEdit" name="areaCodigo"/>
     </item>
     <item>
      <widget class="QFrame" name="frame_2">
@@ -134,10 +62,118 @@ color:white;</string>
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
+      <widget class="QPushButton" name="rodar">
+       <property name="geometry">
+        <rect>
+         <x>660</x>
+         <y>0</y>
+         <width>86</width>
+         <height>27</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#rodar{
+
+	background-color: #00FF00;
+	color:#02031a;
+	border: solid 0 0 1 0;
+
+}
+
+#rodar:hover{
+	color:white;
+}
+</string>
+       </property>
+       <property name="text">
+        <string>Executar</string>
+       </property>
+      </widget>
      </widget>
     </item>
    </layout>
   </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>740</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>28</height>
+    </size>
+   </property>
+   <widget class="QMenu" name="menuArquivo">
+    <property name="title">
+     <string>Arquivo</string>
+    </property>
+    <widget class="QMenu" name="menuSalvar">
+     <property name="title">
+      <string>Novo</string>
+     </property>
+    </widget>
+    <addaction name="menuSalvar"/>
+    <addaction name="actionAbrir"/>
+    <addaction name="actionSalvar_como"/>
+    <addaction name="actionSalvar_como_2"/>
+   </widget>
+   <widget class="QMenu" name="menuEditar">
+    <property name="title">
+     <string>Linguagem</string>
+    </property>
+    <addaction name="actionPython"/>
+    <addaction name="actionC"/>
+    <addaction name="actionJava"/>
+   </widget>
+   <widget class="QMenu" name="menuLinguagem">
+    <property name="title">
+     <string>Editar</string>
+    </property>
+   </widget>
+   <addaction name="menuArquivo"/>
+   <addaction name="menuEditar"/>
+   <addaction name="menuLinguagem"/>
+  </widget>
+  <action name="actionAbrir">
+   <property name="text">
+    <string>Abrir</string>
+   </property>
+  </action>
+  <action name="actionSalvar_como">
+   <property name="text">
+    <string>Salvar</string>
+   </property>
+  </action>
+  <action name="actionhfmjkjh">
+   <property name="text">
+    <string>hfmjkjh</string>
+   </property>
+  </action>
+  <action name="actionSalvar_como_2">
+   <property name="text">
+    <string>Salvar como</string>
+   </property>
+  </action>
+  <action name="actionPython">
+   <property name="text">
+    <string>Python</string>
+   </property>
+  </action>
+  <action name="actionC">
+   <property name="text">
+    <string>C</string>
+   </property>
+  </action>
+  <action name="actionJava">
+   <property name="text">
+    <string>Java</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
