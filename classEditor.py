@@ -13,7 +13,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
-        MainWindow.setObjectName("MainWindow")
+        MainWindow.setObjectName("Simple Editor")
         MainWindow.resize(740, 569)
         MainWindow.setMinimumSize(QtCore.QSize(740, 569))
         self.centralwidget = QtWidgets.QWidget(MainWindow)
@@ -92,7 +92,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("Simple Editor", "Simple Editor"))
         self.rodar.setText(_translate("MainWindow", "Executar"))
         self.menuArquivo.setTitle(_translate("MainWindow", "Arquivo"))
         self.menuSalvar.setTitle(_translate("MainWindow", "Novo"))

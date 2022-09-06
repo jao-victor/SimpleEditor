@@ -10,15 +10,25 @@ class Editor(QMainWindow):
 		self.editor = Ui_MainWindow()
 		self.editor.setupUi(self)
 
-		self.editor.actionSalvar_como.triggered.connect(self.salvar)
+		self.editor.actionSalvar_como_2.triggered.connect(self.salvar)
+		self.editor.actionAbrir.triggered.connect(self.abrir)
 
 	def salvar(self):
 
-		arquivo = QtWidgets.QFileDialog.getSaveFileName()[0]
+		caminho = QtWidgets.QFileDialog.getSaveFileName()[0]
 		self.codigo = self.editor.areaCodigo.toPlainText() #captura o conteúdo do editor
 
-		with open(arquivo + '.py', 'w') as file:
+		with open(caminho + '.py', 'w') as file:
 			file.write(self.codigo)
+			file.close()
+
+	def abrir(self):
+
+		caminho = QtWidgets.QFileDialog.getOpenFileName()[0]
+		with open(caminho, 'r') as arquivo:
+			self.codigo = arquivo.read()
+			self.editor.areaCodigo.setPlainText(self.codigo)
+
 
 
 app = QtWidgets.QApplication([])
