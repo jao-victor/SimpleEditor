@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>SimpleEditor</class>
+ <widget class="QMainWindow" name="SimpleEditor">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -62,17 +62,41 @@
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <widget class="QPushButton" name="rodar">
-       <property name="geometry">
-        <rect>
-         <x>660</x>
-         <y>0</y>
-         <width>86</width>
-         <height>27</height>
-        </rect>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <property name="spacing">
+        <number>0</number>
        </property>
-       <property name="styleSheet">
-        <string notr="true">#rodar{
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QPushButton" name="rodar">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>27</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>70</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="layoutDirection">
+          <enum>Qt::LeftToRight</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">#rodar{
 
 	background-color: #00FF00;
 	color:#02031a;
@@ -84,11 +108,13 @@
 	color:white;
 }
 </string>
-       </property>
-       <property name="text">
-        <string>Executar</string>
-       </property>
-      </widget>
+         </property>
+         <property name="text">
+          <string>Executar</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </item>
    </layout>
@@ -120,7 +146,6 @@
     <addaction name="menuSalvar"/>
     <addaction name="actionAbrir"/>
     <addaction name="actionSalvar_como"/>
-    <addaction name="actionSalvar_como_2"/>
    </widget>
    <widget class="QMenu" name="menuEditar">
     <property name="title">
@@ -130,14 +155,8 @@
     <addaction name="actionC"/>
     <addaction name="actionJava"/>
    </widget>
-   <widget class="QMenu" name="menuLinguagem">
-    <property name="title">
-     <string>Editar</string>
-    </property>
-   </widget>
    <addaction name="menuArquivo"/>
    <addaction name="menuEditar"/>
-   <addaction name="menuLinguagem"/>
   </widget>
   <action name="actionAbrir">
    <property name="text">
