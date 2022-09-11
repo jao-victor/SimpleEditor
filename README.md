@@ -18,4 +18,4 @@ Ferramentas usadas:
     
     
     
-![gif](https://github.com/jao-victor/SimpleEditor/SimpleEditor.gif)
+![gif](https://github.com/jao-victor/SimpleEditor/blob/main/SimpleEditor.gif)
