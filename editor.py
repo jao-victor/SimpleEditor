@@ -5,6 +5,8 @@ from  classEditor2 import Ui_SimpleEditor
 from PyQt5.QtWidgets import QMainWindow
 import os
 
+##00BFFF
+
 class Editor(QMainWindow):
 
 	def __init__(self):
@@ -17,11 +19,11 @@ class Editor(QMainWindow):
 		self.editor.actionPython.triggered.connect(self.python)
 		self.editor.actionC.triggered.connect(self.C)
 		self.editor.actionJava.triggered.connect(self.java)
+		self.editor.actionNovo.triggered.connect(self.novo)
 
 		self.caminho = ' '
 		self.comp = 'python3'
 		self.ext = '.py'
-
 
 	def python(self):
 		import platform
@@ -36,6 +38,11 @@ class Editor(QMainWindow):
 
 	def C (self):
 		self.ext = '.c'
+
+
+	def novo(self):
+		os.system(f'{self.comp} editor.py')
+
 
 	def salvar(self):
 
@@ -72,14 +79,13 @@ class Editor(QMainWindow):
 	def abrir(self):
 
 		self.caminho = QtWidgets.QFileDialog.getOpenFileName()[0]
-		print(self.caminho)
 		with open(self.caminho, 'r') as arquivo:
 			self.codigo = arquivo.read()
 			self.editor.areaCodigo.setPlainText(self.codigo)
+			arquivo.close()
 
+		self.caminho = self.caminho.split('.')[0]
 
-
-			
 
 	def executar(self):
 

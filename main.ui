@@ -138,14 +138,9 @@
     <property name="title">
      <string>Arquivo</string>
     </property>
-    <widget class="QMenu" name="menuSalvar">
-     <property name="title">
-      <string>Novo</string>
-     </property>
-    </widget>
-    <addaction name="menuSalvar"/>
     <addaction name="actionAbrir"/>
     <addaction name="actionSalvar_como"/>
+    <addaction name="actionNovo"/>
    </widget>
    <widget class="QMenu" name="menuEditar">
     <property name="title">
@@ -191,6 +186,11 @@
   <action name="actionJava">
    <property name="text">
     <string>Java</string>
+   </property>
+  </action>
+  <action name="actionNovo">
+   <property name="text">
+    <string>Novo</string>
    </property>
   </action>
  </widget>

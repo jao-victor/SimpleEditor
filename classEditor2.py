@@ -62,8 +62,6 @@ class Ui_SimpleEditor(object):
         self.menuBar.setObjectName("menuBar")
         self.menuArquivo = QtWidgets.QMenu(self.menuBar)
         self.menuArquivo.setObjectName("menuArquivo")
-        self.menuSalvar = QtWidgets.QMenu(self.menuArquivo)
-        self.menuSalvar.setObjectName("menuSalvar")
         self.menuEditar = QtWidgets.QMenu(self.menuBar)
         self.menuEditar.setObjectName("menuEditar")
         SimpleEditor.setMenuBar(self.menuBar)
@@ -81,9 +79,11 @@ class Ui_SimpleEditor(object):
         self.actionC.setObjectName("actionC")
         self.actionJava = QtWidgets.QAction(SimpleEditor)
         self.actionJava.setObjectName("actionJava")
-        self.menuArquivo.addAction(self.menuSalvar.menuAction())
+        self.actionNovo = QtWidgets.QAction(SimpleEditor)
+        self.actionNovo.setObjectName("actionNovo")
         self.menuArquivo.addAction(self.actionAbrir)
         self.menuArquivo.addAction(self.actionSalvar_como)
+        self.menuArquivo.addAction(self.actionNovo)
         self.menuEditar.addAction(self.actionPython)
         self.menuEditar.addAction(self.actionC)
         self.menuEditar.addAction(self.actionJava)
@@ -95,10 +95,9 @@ class Ui_SimpleEditor(object):
 
     def retranslateUi(self, SimpleEditor):
         _translate = QtCore.QCoreApplication.translate
-        SimpleEditor.setWindowTitle(_translate("SimpleEditor", "MainWindow"))
+        SimpleEditor.setWindowTitle(_translate("SimpleEditor", "SimpleEditor"))
         self.rodar.setText(_translate("SimpleEditor", "Executar"))
         self.menuArquivo.setTitle(_translate("SimpleEditor", "Arquivo"))
-        self.menuSalvar.setTitle(_translate("SimpleEditor", "Novo"))
         self.menuEditar.setTitle(_translate("SimpleEditor", "Linguagem"))
         self.actionAbrir.setText(_translate("SimpleEditor", "Abrir"))
         self.actionSalvar_como.setText(_translate("SimpleEditor", "Salvar"))
@@ -107,3 +106,4 @@ class Ui_SimpleEditor(object):
         self.actionPython.setText(_translate("SimpleEditor", "Python"))
         self.actionC.setText(_translate("SimpleEditor", "C"))
         self.actionJava.setText(_translate("SimpleEditor", "Java"))
+        self.actionNovo.setText(_translate("SimpleEditor", "Novo"))
