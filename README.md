@@ -16,6 +16,10 @@ Ferramentas usadas:
     - Atom
     - Python 3.10.4
     
+Requisitos
+
+   - PyQt5   v5.15.6
+    
     
     
 ![gif](https://github.com/jao-victor/SimpleEditor/blob/main/SimpleEditor.gif)
