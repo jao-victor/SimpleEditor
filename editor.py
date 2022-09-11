@@ -34,45 +34,54 @@ class Editor(QMainWindow):
 	def java(self):
 		self.ext = '.java'
 
-
 	def C (self):
 		self.ext = '.c'
 
-
 	def salvar(self):
 
-		self.caminho = QtWidgets.QFileDialog.getSaveFileName()[0]
 		self.codigo = self.editor.areaCodigo.toPlainText() #captura o conteúdo do editor
 
-		if(self.ext == '.py'):
-			with open(self.caminho + '.py', 'w') as file:
+		if(self.caminho != ' '):
+			with open(self.caminho+self.ext, 'w') as file:
 				file.write(self.codigo)
 				self.file = file
 				file.close()
 
-		if (self.ext == '.java'):
-			with open(self.caminho + '.java', 'w') as file:
-				file.write(self.codigo)
-				self.file = file
-				file.close()
+		else:
 
-		if (self.ext == '.c'):
-			with open(self.caminho + '.c', 'w') as file:
-				file.write(self.codigo)
-				self.file = file
-				file.close()
+			self.caminho = QtWidgets.QFileDialog.getSaveFileName()[0]
 
+			if(self.ext == '.py'):
+				with open(self.caminho + '.py', 'w') as file:
+					file.write(self.codigo)
+					self.file = file
+					file.close()
+
+			if (self.ext == '.java'):
+				with open(self.caminho + '.java', 'w') as file:
+					file.write(self.codigo)
+					self.file = file
+					file.close()
+
+			if (self.ext == '.c'):
+				with open(self.caminho + '.c', 'w') as file:
+					file.write(self.codigo)
+					self.file = file
+					file.close()
 
 	def abrir(self):
 
 		self.caminho = QtWidgets.QFileDialog.getOpenFileName()[0]
+		print(self.caminho)
 		with open(self.caminho, 'r') as arquivo:
 			self.codigo = arquivo.read()
 			self.editor.areaCodigo.setPlainText(self.codigo)
 
 
-	def executar(self):
 
+			
+
+	def executar(self):
 
 		if(self.caminho != ' ' and self.ext == '.java'):
 			os.system(f'javac {self.caminho}.java')
@@ -91,8 +100,6 @@ class Editor(QMainWindow):
 			msg.setText("Salve seu arquivo")
 			msg.setIcon(QMessageBox.Critical)
 			msg.exec()
-
-
 
 app = QtWidgets.QApplication([])
 
